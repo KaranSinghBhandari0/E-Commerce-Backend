@@ -1,19 +1,28 @@
 {
   "name": "e-commerce-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Production-grade E-Commerce Backend built with Express.js and TypeScript",
+  "main": "dist/server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KaranSinghBhandari0/E-Commerce-Backend.git"
   },
-  "keywords": [],
+  "keywords": [
+    "express",
+    "typescript",
+    "nodejs",
+    "backend",
+    "ecommerce"
+  ],
   "author": "Karan Singh Bhandari",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/KaranSinghBhandari0/E-Commerce-Backend/issues"
   },

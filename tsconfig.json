@@ -1,44 +1,31 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    "target": "ES2022", // Compile to ES2022 JavaScript syntax
+    "module": "NodeNext", // Use Node.js ESM/CommonJS module behavior
+    "moduleResolution": "NodeNext", // Resolve imports like modern Node.js
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    "rootDir": "./src", // Source files location
+    "outDir": "./dist", // Output compiled files here
 
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "strict": true, // Enable all strict type-checking
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true, // Improve compatibility with CommonJS modules
 
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
+    "forceConsistentCasingInFileNames": true, // Prevent filename casing mismatches
 
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    "skipLibCheck": true, // Skip type-checking declaration (.d.ts) files
+
+    "resolveJsonModule": true, // Allow importing .json files
+
+    "noEmitOnError": true // Don't generate output if there are type errors
+  },
+
+  "include": [
+    "src" // Compile files inside src
+  ],
+
+  "exclude": [
+    "node_modules", // Ignore dependencies
+    "dist" // Ignore generated output
+  ]
 }
