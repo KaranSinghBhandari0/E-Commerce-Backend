@@ -1,11 +1,15 @@
-import dotenv from 'dotenv';
-
-import app from './app.js';
-
-dotenv.config();
+import app from './app.ts';
+import { logger } from './config/logger.ts';
 
 const PORT = process.env.PORT || 3000;
+const ENV = process.env.NODE_ENV;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  logger.info(
+    {
+      port: PORT,
+      environment: ENV,
+    },
+    'Server started successfully'
+  );
 });
