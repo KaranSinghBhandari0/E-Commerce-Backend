@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
 import pino from 'pino';
 
-dotenv.config();
+import { env } from './env.js';
 
-const isDevelopment = process.env.NODE_ENV === 'development';
+const isDevelopment = env.NODE_ENV === 'development';
 
 export const logger = pino({
   level: isDevelopment ? 'debug' : 'info',
