@@ -2,9 +2,9 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express from 'express';
 
-import './config/env.ts';
-import { errorMiddleware } from './middleware/error.middleware.ts';
-import { requestLogger } from './middleware/requestLogger.middleware.ts';
+import './config/env.js';
+import { errorMiddleware } from './middleware/error.middleware.js';
+import { requestLogger } from './middleware/requestLogger.middleware.js';
 import healthRoutes from './routes/health.routes.js';
 
 const app = express();

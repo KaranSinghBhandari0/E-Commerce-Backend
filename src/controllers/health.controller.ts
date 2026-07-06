@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 
-import { sendResponse } from '../utils/sendResponse.ts';
+import { getDatabaseStatus } from '../config/database.js';
+import { env } from '../config/env.js';
+import { sendResponse } from '../utils/sendResponse.js';
 
 export const healthCheck = (_req: Request, res: Response): void => {
   sendResponse(res, {
@@ -10,7 +12,8 @@ export const healthCheck = (_req: Request, res: Response): void => {
       status: 'UP',
       timestamp: new Date().toISOString(),
       uptime: process.uptime(),
-      environment: process.env.NODE_ENV,
+      environment: env.NODE_ENV,
+      database: getDatabaseStatus(),
     },
   });
 };

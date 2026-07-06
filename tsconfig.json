@@ -17,11 +17,7 @@
 
     "resolveJsonModule": true, // Allow importing .json files
 
-    "noEmitOnError": true, // Don't generate output if there are type errors
-
-    "allowImportingTsExtensions": true,
-
-    "noEmit": true
+    "noEmitOnError": true // Don't generate output if there are type errors
   },
 
   "include": [
